@@ -45,7 +45,7 @@ public class RedisTest {
   /**
    * redis操作Map
    */
-  @Test
+//  @Test
   public void testMap() {
     // -----添加数据----------
     Map<String, String> map = new HashMap<String, String>();
@@ -133,6 +133,7 @@ public class RedisTest {
   public void testRedisPool() {
     System.out.println("aaa"); // [1, 3, 6, 9] //输入排序后结果
     // RedisUtil.getJedis().set("newname", "中文测试");
-    // System.out.println(RedisUtil.getJedis().get("newname"));
+    jedis.set("newname", "中文测试");
+     System.out.println(jedis.get("newname"));
   }
 }
