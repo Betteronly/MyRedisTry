@@ -15,7 +15,8 @@ public final class RedisUtil {
 	private static int PORT = 6379;
 
 	// 访问密码
-	private static String AUTH = "admin";
+	// private static String AUTH = "admin";
+	private static String AUTH = "";
 
 	// 可用连接实例的最大数目，默认值为8；
 	// 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
@@ -44,7 +45,8 @@ public final class RedisUtil {
 			// config.setMaxIdle(MAX_IDLE);
 			// config.setMaxWait(MAX_WAIT);
 			config.setTestOnBorrow(TEST_ON_BORROW);
-			jedisPool = new JedisPool(config, ADDR, PORT, TIMEOUT, AUTH);
+			// jedisPool = new JedisPool(config, ADDR, PORT, TIMEOUT, AUTH);
+			jedisPool = new JedisPool(config, ADDR, PORT);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

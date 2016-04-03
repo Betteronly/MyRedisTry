@@ -132,8 +132,8 @@ public class RedisTest {
 
 	@Test
 	public void testRedisPool() {
-		System.out.println("aaa"); // [1, 3, 6, 9] //输入排序后结果
-		// RedisUtil.getJedis().set("newname", "中文测试");
+		System.out.println("testRedisPool start"); // [1, 3, 6, 9] //输入排序后结果
+		RedisUtil.getJedis().set("newname", "中文测试");
 		// jedis.set("newname", "中文测试");
 		System.out.println(jedis.get("newname"));
 	}
